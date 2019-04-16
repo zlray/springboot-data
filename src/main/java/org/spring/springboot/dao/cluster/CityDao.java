@@ -1,4 +1,4 @@
-package org.spring.springboot.dao;
+package org.spring.springboot.dao.cluster;
 
 import org.apache.ibatis.annotations.Param;
 import org.spring.springboot.domain.City;
@@ -34,4 +34,11 @@ public interface CityDao {
     int updateCity(City city);
 
     int deleteCity(int id);
+
+    /**
+     * 根据城市名称，查询城市信息
+     *
+     * @param cityName 城市名
+     */
+    City findByName(@Param("cityName") String cityName);
 }
